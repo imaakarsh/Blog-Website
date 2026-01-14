@@ -273,7 +273,7 @@ We welcome contributions! Follow these steps:
 
 **License:** MIT License – see the [LICENSE](https://github.com/imaakarsh/Blog-Website/blob/main/LICENSE) file for details.  
 
-**Author:** *Karsh* – [GitHub Profile](https://github.com/imaakarsh)  
+**Author:** *AaKarsh* – [GitHub Profile](https://github.com/imaakarsh)  
 
 **Acknowledgments**  
 
