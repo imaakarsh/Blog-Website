@@ -33,7 +33,9 @@ a{
     font-size: 3.5rem;
     line-height: 2rem;
     font-weight: 700;
-    text-align: center;}
+    text-align: center;
+    text-color:white;
+}
 
 .header_discription{
     text-align: center;
@@ -177,3 +179,4 @@ a{
      color: rgb(49, 49, 49);
 
 }
+
