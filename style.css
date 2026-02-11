@@ -13,7 +13,7 @@ body{
 }
 
 a{
-    text-decoration: none ;
+    text-decoration: none;
 }
 .container{
     max-width: 73vw;
@@ -34,14 +34,14 @@ a{
     line-height: 2rem;
     font-weight: 700;
     text-align: center;
-    text-color:white;
+    color: rgb(162, 161, 161);
 }
 
 .header_discription{
     text-align: center;
     max-width: 568px;
     font-size: 1.2rem;
-    color: rgb(66, 66, 66);
+    color: rgb(115, 115, 115);
     margin: auto;
 }
 
