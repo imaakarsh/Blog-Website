@@ -30,6 +30,7 @@ The layout adapts gracefully from mobile to desktop, providing a solid foundatio
 | 👤 Author avatar | Dynamic avatar from DiceBear API | ✅ Stable |
 | 🏷️ Category tags | Color‑coded tags for quick content filtering | ✅ Stable |
 | ⚡ Clean code structure | Semantic HTML, BEM‑style CSS naming | ✅ Stable |
+| 🎨 Refactored body & container styles | Updated background color and container layout for a cleaner, more centered appearance | ✅ Stable |
 | 🌙 Dark‑mode placeholder | CSS variables prepared for future dark theme | ⚙️ Planned |
 
 ---  
@@ -99,7 +100,7 @@ The project follows a **single‑page static architecture**: the browser loads `
 
 ### Verification  
 
-You should see a grid of blog cards similar to the screenshot below. Resize the browser window to confirm the responsive behavior.
+You should see a grid of blog cards similar to the screenshot below. Resize the browser window to confirm the responsive behavior and notice the updated background and centered container layout.
 
 ---  
 
@@ -150,6 +151,35 @@ The site is static; no runtime configuration is required. Below are common usage
 - **Indentation** – 2 spaces (no tabs).  
 - **Comments** – Use `/* comment */` in CSS; HTML comments `<!-- comment -->` sparingly.  
 
+#### Recent CSS Refactor  
+
+- **Body background** now uses the CSS variable `--bg-color` for easy theming.  
+- **Container layout** switched to a Flexbox‑based centering approach, improving vertical alignment on tall viewports.  
+
+```css
+/* style.css – excerpt */
+:root {
+  --bg-color: #f9fafb; /* light gray background */
+}
+
+/* Body */
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* top‑aligned but centered horizontally */
+}
+
+/* Main container */
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 1rem;
+}
+```
+
 ### Running Tests  
 
 The project does not contain automated tests. For visual regression, open the page in multiple browsers and verify layout consistency.
@@ -185,6 +215,7 @@ All hosts serve the files exactly as they appear locally; no build step is requi
 | **CSS not applied when opening via `file://`** | Some browsers block external resources on `file://`. Use a local HTTP server (`python -m http.server`). |
 | **Layout looks broken on mobile** | Confirm that the viewport meta tag is present in `index.html` (`<meta name="viewport" content="width=device-width, initial-scale=1">`). |
 | **Want to add dark mode** | Edit `style.css` to define `:root { --bg: #111; --text: #eee; }` and toggle via a class on `<body>`. |
+| **Container appears off‑center** | The recent CSS refactor uses Flexbox centering; ensure you are loading the latest `style.css`. |
 
 ---  
 
@@ -236,4 +267,4 @@ This project is licensed under the **MIT License** – see the [LICENSE](https:/
 **Aakarsh** – Aspiring Web / Full‑Stack Developer  
 [GitHub Profile](https://github.com/imaakarsh)  
 
-Happy coding! 🚀  
+Happy coding! 🚀
