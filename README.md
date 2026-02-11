@@ -155,11 +155,13 @@ The site is static; no runtime configuration is required. Below are common usage
 
 - **Body background** now uses the CSS variable `--bg-color` for easy theming.  
 - **Container layout** switched to a Flexbox‑based centering approach, improving vertical alignment on tall viewports.  
+- Added a **container background variable** (`--container-bg`) to make future theming (e.g., dark mode) straightforward.  
 
 ```css
 /* style.css – excerpt */
 :root {
-  --bg-color: #f9fafb; /* light gray background */
+  --bg-color: #f9fafb;          /* Light gray page background */
+  --container-bg: #ffffff;      /* Default container background */
 }
 
 /* Body */
@@ -169,7 +171,7 @@ body {
   background-color: var(--bg-color);
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* top‑aligned but centered horizontally */
+  align-items: flex-start;      /* Top‑aligned but centered horizontally */
 }
 
 /* Main container */
@@ -177,6 +179,9 @@ body {
   max-width: 1200px;
   width: 100%;
   padding: 1rem;
+  background-color: var(--container-bg);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 ```
 
@@ -214,7 +219,7 @@ All hosts serve the files exactly as they appear locally; no build step is requi
 | **Avatars appear broken** | Verify the DiceBear API URL is correct; you can replace the seed value to generate a new avatar. |
 | **CSS not applied when opening via `file://`** | Some browsers block external resources on `file://`. Use a local HTTP server (`python -m http.server`). |
 | **Layout looks broken on mobile** | Confirm that the viewport meta tag is present in `index.html` (`<meta name="viewport" content="width=device-width, initial-scale=1">`). |
-| **Want to add dark mode** | Edit `style.css` to define `:root { --bg: #111; --text: #eee; }` and toggle via a class on `<body>`. |
+| **Want to add dark mode** | Edit `style.css` to define `:root { --bg-color: #111; --text-color: #eee; --container-bg: #222; }` and toggle via a class on `<body>`. |
 | **Container appears off‑center** | The recent CSS refactor uses Flexbox centering; ensure you are loading the latest `style.css`. |
 
 ---  
